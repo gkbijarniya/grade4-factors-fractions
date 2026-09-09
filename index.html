@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Factor & Fraction Fun</title>
+<style>
+:root{--ink:#24324a;--muted:#65738b;--paper:#fff;--bg:#f6f8ff;--primary:#6757d9;--secondary:#25b99a;--accent:#ffb84d;--pink:#ff6f91;--shadow:0 12px 30px rgba(42,55,100,.12)}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:linear-gradient(135deg,#f7f5ff,#effcff);line-height:1.5}
+header{padding:22px 18px;text-align:center;background:var(--paper);box-shadow:0 4px 18px rgba(30,40,80,.08);position:sticky;top:0;z-index:5}
+.logo{font-size:28px;font-weight:900;color:var(--primary)}header p{margin:2px 0 0;color:var(--muted)}
+.container{max-width:1050px;margin:auto;padding:28px 18px 50px}.hero{text-align:center;padding:18px 0 25px}.hero h1{font-size:clamp(32px,6vw,58px);margin:10px 0 5px}.hero span{color:var(--primary)}.hero p{font-size:18px;color:var(--muted);max-width:700px;margin:0 auto}
+.tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:20px 0 25px}.tab{border:0;background:white;padding:12px 20px;border-radius:999px;font-size:16px;font-weight:800;color:var(--muted);cursor:pointer;box-shadow:0 5px 16px rgba(40,50,90,.08)}.tab.active{background:var(--primary);color:white}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}.card{background:white;border-radius:22px;padding:23px;box-shadow:var(--shadow)}.card h2{margin-top:0}.pill{display:inline-block;padding:5px 11px;border-radius:999px;background:#eeeaff;color:var(--primary);font-weight:800;font-size:13px}
+.example{background:#f8f9ff;border-left:5px solid var(--secondary);padding:13px 16px;border-radius:12px;margin:13px 0}.number-line{text-align:center;font-size:24px;font-weight:800;letter-spacing:5px}
+.fraction{display:inline-flex;vertical-align:middle;flex-direction:column;line-height:1;text-align:center;font-weight:900;margin:0 4px}.fraction .top{border-bottom:2px solid currentColor;padding:0 5px}.fraction .bottom{padding:3px 5px 0}
+.hidden{display:none}.quiz-top{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}.progress{height:10px;background:#e9edf5;border-radius:20px;overflow:hidden;margin:14px 0 22px}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--primary),var(--secondary));transition:.3s}
+.question{font-size:21px;font-weight:800;margin:10px 0 18px}.options{display:grid;grid-template-columns:1fr 1fr;gap:12px}.option{padding:15px;border:2px solid #e4e8f1;border-radius:15px;background:#fff;text-align:left;font-size:16px;font-weight:700;cursor:pointer;transition:.15s}.option:hover{border-color:var(--primary);transform:translateY(-1px)}.option.correct{border-color:var(--secondary);background:#e8fff8}.option.wrong{border-color:var(--pink);background:#fff0f4}.option:disabled{cursor:default}
+.feedback{margin-top:15px;padding:13px 15px;border-radius:14px;background:#f6f8ff}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{border:0;padding:12px 18px;border-radius:12px;font-weight:900;font-size:15px;cursor:pointer;background:var(--primary);color:white}.btn.alt{background:#e9ecf5;color:var(--ink)}.score{text-align:center;padding:20px}.score .big{font-size:60px;font-weight:950;color:var(--primary)}
+.tip{margin-top:20px;background:#fff7df;border-radius:16px;padding:15px}.footer{text-align:center;color:var(--muted);margin-top:30px;font-size:14px}
+@media(max-width:650px){.options{grid-template-columns:1fr}.card{padding:18px}.question{font-size:19px}}
+</style>
+</head>
+<body>
+<header><div class="logo">✨ Factor & Fraction Fun</div><p>Grade 4 Maths Practice</p></header>
+<main class="container">
+<section class="hero">
+<h1>Learn. Practice. <span>Master!</span></h1>
+<p>Explore factors and fractions with simple examples, then test yourself with a 25-question quiz.</p>
+</section>
+
+<div class="tabs">
+<button class="tab active" onclick="showSection('factors',this)">Factors</button>
+<button class="tab" onclick="showSection('fractions',this)">Fractions</button>
+<button class="tab" onclick="showSection('quiz',this)">Quiz</button>
+</div>
+
+<section id="factors">
+<div class="grid">
+<div class="card"><span class="pill">FACTORS</span><h2>What is a factor?</h2>
+<p>A <b>factor</b> is a whole number that divides another number exactly, with no remainder.</p>
+<div class="example"><b>Example:</b> 3 is a factor of 12 because 12 ÷ 3 = 4.</div>
+<p>So the factors of 12 are:</p><div class="number-line">1 · 2 · 3 · 4 · 6 · 12</div></div>
+<div class="card"><span class="pill">FACTOR PAIRS</span><h2>Find factor pairs</h2>
+<p>Multiply two whole numbers to make the target number.</p>
+<div class="example">For 24:<br><b>1 × 24</b><br><b>2 × 12</b><br><b>3 × 8</b><br><b>4 × 6</b></div>
+<p>That gives the factor pairs of 24.</p></div>
+<div class="card"><span class="pill">COMMON FACTORS</span><h2>Compare two numbers</h2>
+<p>Factors that two numbers share are called <b>common factors</b>.</p>
+<div class="example">Factors of 12: 1, 2, 3, 4, 6, 12<br>Factors of 18: 1, 2, 3, 6, 9, 18<br><b>Common factors:</b> 1, 2, 3, 6</div></div>
+<div class="card"><span class="pill">REMEMBER</span><h2>Quick tips</h2>
+<ul><li>1 is a factor of every whole number.</li><li>Every number is a factor of itself.</li><li>A factor always divides evenly.</li><li>Factors come in pairs when multiplied.</li></ul></div>
+</div>
+</section>
+
+<section id="fractions" class="hidden">
+<div class="grid">
+<div class="card"><span class="pill">FRACTIONS</span><h2>What is a fraction?</h2>
+<p>A fraction shows equal parts of a whole.</p>
+<div class="example" style="text-align:center;font-size:26px">🍕 🍕 🍕 🍕<br><span class="fraction"><span class="top">3</span><span class="bottom">4</span></span> of the pizza is shaded.</div>
+<p>The <b>numerator</b> is on top. The <b>denominator</b> is on the bottom.</p></div>
+<div class="card"><span class="pill">TYPES</span><h2>Types of fractions</h2>
+<ul><li><b>Proper:</b> numerator is smaller than denominator, e.g. 3/5.</li><li><b>Improper:</b> numerator is equal to or greater than denominator, e.g. 7/4.</li><li><b>Mixed number:</b> a whole number and a fraction, e.g. 1 3/4.</li></ul></div>
+<div class="card"><span class="pill">EQUIVALENT</span><h2>Equivalent fractions</h2>
+<p>Equivalent fractions have the same value even though their numbers look different.</p>
+<div class="example" style="text-align:center;font-size:25px"><span class="fraction"><span class="top">1</span><span class="bottom">2</span></span> = <span class="fraction"><span class="top">2</span><span class="bottom">4</span></span> = <span class="fraction"><span class="top">3</span><span class="bottom">6</span></span></div>
+<p>Multiply or divide the numerator and denominator by the same non-zero number.</p></div>
+<div class="card"><span class="pill">COMPARE</span><h2>Which fraction is bigger?</h2>
+<p>When denominators are the same, compare the numerators.</p>
+<div class="example"><b>3/8 &gt; 1/8</b> because 3 parts are more than 1 part.</div>
+<p>When denominators differ, you can use equivalent fractions or compare the sizes of the parts.</p></div>
+</div>
+</section>
+
+<section id="quiz" class="hidden">
+<div id="quizCard" class="card">
+<div class="quiz-top"><span class="pill">25 QUESTIONS</span><b id="counter">Question 1 of 25</b></div>
+<div class="progress"><div class="bar" id="bar"></div></div>
+<div class="question" id="question"></div>
+<div class="options" id="options"></div>
+<div id="feedback"></div>
+<div class="actions"><button class="btn hidden" id="nextBtn" onclick="nextQuestion()">Next Question →</button><button class="btn alt" onclick="restartQuiz()">Restart</button></div>
+</div>
+<div id="result" class="card hidden score"><h2>Quiz Complete! 🎉</h2><div class="big" id="scoreText"></div><p id="scoreMessage"></p><button class="btn" onclick="restartQuiz()">Try Again</button></div>
+</section>
+
+<div class="tip"><b>⭐ Study tip:</b> First learn the examples, then take the quiz. If you miss a question, go back to the Factors or Fractions section and try again!</div>
+<div class="footer">Made for Grade 4 Maths practice • Factors & Fractions</div>
+</main>
+
+<script>
+const questions=[
+{q:"Which number is a factor of 24?",o:["5","6","7","9"],a:1,e:["5 does not divide 24 evenly.","24 ÷ 6 = 4, so 6 is a factor of 24.","7 does not divide 24 evenly.","9 does not divide 24 evenly."]},
+{q:"Which list contains all the factors of 10?",o:["1, 2, 5, 10","1, 3, 5, 10","2, 4, 5, 10","1, 2, 4, 10"],a:0,e:["1 × 10 and 2 × 5 give every factor of 10.","3 is not a factor of 10.","4 is not a factor of 10.","4 is not a factor of 10."]},
+{q:"Which pair is a factor pair of 36?",o:["4 and 8","5 and 7","6 and 6","3 and 11"],a:2,e:["4 × 8 = 32, not 36.","5 × 7 = 35, not 36.","6 × 6 = 36, so this is a factor pair.","3 × 11 = 33, not 36."]},
+{q:"What is the greatest factor of 18?",o:["6","9","18","36"],a:2,e:["6 is a factor, but 18 is greater.","9 is a factor, but not the greatest.","Every number is a factor of itself, so 18 is the greatest factor.","36 is greater than 18 and is not a factor of 18."]},
+{q:"Which number is NOT a factor of 30?",o:["2","3","5","8"],a:3,e:["30 ÷ 2 = 15, so 2 is a factor.","30 ÷ 3 = 10, so 3 is a factor.","30 ÷ 5 = 6, so 5 is a factor.","30 cannot be divided by 8 with no remainder."]},
+{q:"What is a common factor of 12 and 20?",o:["3","4","7","9"],a:1,e:["3 is not a factor of 20.","4 divides both 12 and 20 evenly.","7 is not a factor of either number.","9 is not a factor of either number."]},
+{q:"How many factors does the number 7 have?",o:["1","2","3","7"],a:1,e:["7 has more than one factor.","The factors are 1 and 7, so there are 2.","7 does not have 3 factors.","7 is the number of the factor, not the count of factors."]},
+{q:"Which multiplication sentence shows a factor pair of 42?",o:["5 × 8 = 42","6 × 7 = 42","4 × 9 = 42","3 × 13 = 42"],a:1,e:["5 × 8 = 40.","6 × 7 = 42, so both numbers are factors.","4 × 9 = 36.","3 × 13 = 39."]},
+{q:"In the fraction 3/8, what is the numerator?",o:["3","8","11","5"],a:0,e:["3 is the number of selected parts, so it is the numerator.","8 is the denominator.","11 is not part of the fraction.","5 is not part of the fraction."]},
+{q:"In the fraction 5/9, what is the denominator?",o:["5","9","14","4"],a:1,e:["5 is the numerator.","9 is the denominator, the total number of equal parts.","14 is not part of the fraction.","4 is not part of the fraction."]},
+{q:"Which fraction is equivalent to 1/2?",o:["2/3","2/4","3/4","4/6"],a:1,e:["2/3 is greater than 1/2.","2/4 simplifies to 1/2.","3/4 is greater than 1/2.","4/6 simplifies to 2/3."]},
+{q:"Which fraction is greater?",o:["1/5","3/5","2/5","4/5"],a:3,e:["With equal denominators, 1 part is fewer than 4 parts.","3/5 is fewer than 4/5.","2/5 is fewer than 4/5.","4/5 has the greatest numerator, so it is greatest."]},
+{q:"Which is a proper fraction?",o:["7/4","5/5","3/8","9/2"],a:2,e:["7/4 is improper because the numerator is greater.","5/5 equals one whole.","3/8 is proper because 3 is less than 8.","9/2 is improper because the numerator is greater."]},
+{q:"Which is an improper fraction?",o:["2/7","3/5","7/7","4/9"],a:2,e:["2/7 is proper because 2 is less than 7.","3/5 is proper because 3 is less than 5.","7/7 is improper because the numerator equals the denominator.","4/9 is proper because 4 is less than 9."]},
+{q:"Which mixed number equals 7/4?",o:["1 1/4","1 3/4","2 1/4","2 3/4"],a:1,e:["1 1/4 equals 5/4.","1 3/4 equals 7/4.","2 1/4 equals 9/4.","2 3/4 equals 11/4."]},
+{q:"What fraction of 8 equal parts is 5 parts?",o:["3/8","5/8","5/3","8/5"],a:1,e:["3/8 represents 3 of the 8 parts.","5/8 represents 5 of the 8 parts.","5/3 has denominator 3, not 8.","8/5 has denominator 5, not 8."]},
+{q:"Which fraction is equal to 3/6 in simplest form?",o:["1/2","1/3","2/3","3/4"],a:0,e:["3/6 simplifies by dividing both numbers by 3, giving 1/2.","1/3 is smaller than 3/6.","2/3 is greater than 3/6.","3/4 is greater than 3/6."]},
+{q:"Which fraction is greater: 2/3 or 2/5?",o:["2/3","2/5","They are equal","Cannot compare"],a:0,e:["Two-thirds is greater because thirds are larger parts than fifths.","2/5 is less than 2/3.","They do not have the same value.","The fractions can be compared because they have the same numerator."]},
+{q:"What is 1/4 + 1/4?",o:["1/8","2/8","1/2","3/4"],a:2,e:["1/4 + 1/4 combines two fourths, not one eighth.","2/8 is equivalent to 1/4, not 1/2.","Two fourths make one half, so the answer is 1/2.","3/4 is one fourth too large."]},
+{q:"What is 3/5 − 1/5?",o:["1/5","2/5","3/10","4/5"],a:1,e:["3/5 − 1/5 leaves 2/5.","The difference is 2/5.","3/10 is not the result when subtracting equal fifths.","4/5 is greater than the starting fraction."]},
+{q:"Which number is a factor of both 16 and 24?",o:["3","4","5","7"],a:1,e:["3 is not a factor of 16.","4 divides both 16 and 24 evenly.","5 is not a factor of either number.","7 is not a factor of either number."]},
+{q:"How many factor pairs does 20 have?",o:["2","3","4","5"],a:1,e:["20 has more than 2 factor pairs.","The pairs are 1×20, 2×10, and 4×5, giving 3 pairs.","There are exactly 3 factor pairs, not 4.","There are not 5 distinct factor pairs."]},
+{q:"Which fraction is closest to one whole?",o:["1/4","2/4","3/4","1/8"],a:2,e:["1/4 is three fourths away from one whole.","2/4 is one half.","3/4 is only one fourth away from one whole.","1/8 is seven eighths away from one whole."]},
+{q:"Which fraction is equivalent to 2/3?",o:["3/5","4/6","5/8","6/8"],a:1,e:["3/5 does not have the same value as 2/3.","4/6 simplifies to 2/3.","5/8 is not equivalent to 2/3.","6/8 simplifies to 3/4."]},
+{q:"If 12 apples are shared equally into 3 groups, how many apples are in each group?",o:["3","4","5","6"],a:1,e:["12 ÷ 3 is 4, not 3.","Each group has 4 apples.","12 ÷ 3 is not 5.","12 ÷ 3 is not 6."]}
+];
+let index=0,score=0,answered=false;
+const $=id=>document.getElementById(id);
+function showSection(id,btn){document.querySelectorAll("main>section").forEach(s=>s.classList.add("hidden"));$(id).classList.remove("hidden");document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));btn.classList.add("active");if(id==="quiz")renderQuestion();}
+function renderQuestion(){
+ if(index>=questions.length){finish();return}
+ answered=false; const x=questions[index];
+ $("counter").textContent=`Question ${index+1} of ${questions.length}`;
+ $("bar").style.width=`${index/questions.length*100}%`;
+ $("question").textContent=x.q;$("feedback").innerHTML="";$("nextBtn").classList.add("hidden");
+ $("options").innerHTML=x.o.map((v,i)=>`<button class="option" onclick="choose(${i})">${String.fromCharCode(65+i)}. ${v}</button>`).join("");
+}
+function choose(i){
+ if(answered)return;answered=true;const x=questions[index],buttons=[...document.querySelectorAll(".option")];
+ buttons.forEach((b,n)=>{b.disabled=true;if(n===x.a)b.classList.add("correct");if(n===i&&i!==x.a)b.classList.add("wrong")});
+ if(i===x.a)score++;
+ $("feedback").innerHTML=`<div class="feedback"><b>${i===x.a?"🎉 Great job!":"💡 Let's learn:"}</b> ${x.e[i]}</div>`;
+ $("nextBtn").classList.remove("hidden");$("bar").style.width=`${(index+1)/questions.length*100}%`;
+}
+function nextQuestion(){index++;renderQuestion()}
+function finish(){
+ $("quizCard").classList.add("hidden");$("result").classList.remove("hidden");
+ $("scoreText").textContent=`${score} / ${questions.length}`;
+ const pct=score/questions.length;
+ $("scoreMessage").textContent=pct===1?"Perfect score! You are a Maths superstar! 🌟":pct>=.8?"Excellent work! Keep practising and you’ll be unstoppable!":"Good effort! Review the examples and try the quiz again—you can improve!";
+}
+function restartQuiz(){index=0;score=0;$("result").classList.add("hidden");$("quizCard").classList.remove("hidden");renderQuestion()}
+renderQuestion();
+</script>
+</body>
+</html>
